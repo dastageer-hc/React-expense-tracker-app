@@ -65,6 +65,10 @@
   color: white
 }
 
+.transaction_list ul{
+  display: flex;
+  flex-direction: column-reverse;
+}
 .transaction_list ul li{
   list-style-type: none;
   background-color: white;

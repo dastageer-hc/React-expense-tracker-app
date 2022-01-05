@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+body {
+  margin: 0;
+  height: 100vh;
+  padding: 0;
+  background-color: #193b51;
+  box-sizing: border-box;
+/* background: linear-gradient(to bottom right, #F57169, #1392E7);
+ */
+/* background-image: url('assets/stacked-peaks-haikei.svg');
+background-repeat: no-repeat;
+background-size: cover; */
+
+/* background-position: 10rem; */
+font-family: 'Jost', sans-serif;
+/* opacity: 0.6; */
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

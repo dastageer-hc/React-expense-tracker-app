@@ -44,7 +44,7 @@ function App() {
       return
     }
      
-      updateTransactions({action: 'expense', payload: parseInt(inputRef.current.value)});
+      updateTransactions({action: 'expense', payload: parseInt(-inputRef.current.value)});
     inputRef.current.value = ''
   }
 

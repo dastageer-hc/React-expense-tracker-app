@@ -70,17 +70,17 @@ const balance = transactions.reduce((acc,el)=>acc+el,0)
       <Card>
 
         <aside>
-          <h3 className={classes.balance_label}>Balance</h3>
+          <h3 className={classes.balance_label}>ಖಾತೆಗಳಲ್ಲಿ ಬ್ಯಾಲೆನ್ಸ್</h3>
           <h1 className={classes['total-balance']}>₹{balance}</h1>
         </aside>
 
         <section className={classes.transaction_container}>
           <aside>
-          <h3 className={classes.transaction_label}>Income</h3>
+          <h3 className={classes.transaction_label}>ಆದಾಯ</h3>
           <h1 className={classes.income}>₹{totalIncome}</h1>
           </aside>
           <aside>
-          <h3 className={classes.transaction_label}>Expenses</h3>
+          <h3 className={classes.transaction_label}>ಖರ್ಚು</h3>
           <h1 className={classes.expense}>₹{totalExpense}</h1>
           </aside>
         </section>

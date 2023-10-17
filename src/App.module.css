@@ -51,15 +51,24 @@
 .addTransaction-container form button {
   height: 2rem;
   width: 5rem;
-  background-color: white;
+  background-color: #fff;
   border: none;
   margin-left: 50px;
   margin-right: 50px;
   border-radius: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 8px 5px rgba(0, 0, 0, 0.1);
 }
+
+.addTransaction-container form button:hover {
+  cursor: pointer;
+}
+
 .addTransaction-container form button:active {
   background-color: rgb(20, 129, 129);
-  color: white;
+  scale: 0.9;
+  /* color: white; */
 }
 
 .transaction_list ul {

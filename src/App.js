@@ -24,8 +24,33 @@ function App() {
   const [transactions, updateTransactions] = useReducer(reducerFunc, []);
   const inputRef = useRef();
 
+  // check if the amount is zero
+  function isAmountZero() {
+    if (inputRef.current.value * 1 === 0) {
+      toast.error("amount should be greater than zero", {
+        autoClose: 1500,
+        hideProgressBar: true,
+      });
+      return true;
+    }
+    return false;
+  }
+
+  function isNegitiveAmount() {
+    if (inputRef.current.value * 1 < 0) {
+      toast.error("amount should be Positive", {
+        autoClose: 1500,
+        hideProgressBar: true,
+      });
+      return true;
+    }
+    return false;
+  }
+
+  //
   const incomeBtnHandler = (e) => {
     e.preventDefault();
+
     if (inputRef.current.value === "") {
       toast.error("Please Enter a number", {
         autoClose: 1500,
@@ -33,6 +58,11 @@ function App() {
       });
       return;
     }
+
+    if (isNegitiveAmount()) return;
+
+    if (isAmountZero()) return;
+
     toast.success("trasaction added", {
       autoClose: 1000,
       hideProgressBar: true,
@@ -48,7 +78,9 @@ function App() {
   const expenseBtnHandler = (e) => {
     e.preventDefault();
 
-    if (inputRef.current.value > balance) {
+    if (isNegitiveAmount()) return;
+
+    if (balance - inputRef.current.value < 0) {
       toast.error("Low Balence", { autoClose: 1500, hideProgressBar: true });
       return;
     }
@@ -61,6 +93,8 @@ function App() {
       });
       return;
     }
+
+    if (isAmountZero()) return;
 
     updateTransactions({
       action: "expense",

@@ -11,7 +11,6 @@ import classes from "./App.module.css";
 import logo from "./logo192.png";
 
 import { useState, useRef, useReducer } from "react";
-import PopUp from "./components/popup/PopUp";
 
 const reducerFunc = (preState, action) => {
   if (action.action === "income") return [...preState, action.payload];
@@ -21,23 +20,17 @@ const reducerFunc = (preState, action) => {
 
 function App() {
   console.log("re rendered");
-
-  const [popup, setPopup] = useState({
-    show: false,
-    message: "",
-  });
   const [transactions, updateTransactions] = useReducer(reducerFunc, []);
   const inputRef = useRef();
 
   const incomeBtnHandler = (e) => {
     e.preventDefault();
     if (inputRef.current.value === "") {
-      setPopup({
-        show: true,
-        message: "Please Enter a number",
-      });
+      toast.error("Please Enter a number", { autoClose: 1500 });
       return;
     }
+    toast.success("trasaction added", { autoClose: 1000 });
+
     updateTransactions({
       action: "income",
       payload: parseInt(inputRef.current.value),
@@ -49,19 +42,13 @@ function App() {
     e.preventDefault();
 
     if (inputRef.current.value > balance) {
-      setPopup({
-        show: true,
-        message: "Low Balence",
-      });
+      toast.error("Low Balence", { autoClose: 1500 });
       return;
     }
 
     if (inputRef.current.value === "") {
       // alert("Please Enter a number");
-      setPopup({
-        show: true,
-        message: "Please Enter a number",
-      });
+      toast.error("Please Enter a number", { autoClose: 1500 });
       return;
     }
 
@@ -69,6 +56,7 @@ function App() {
       action: "expense",
       payload: parseInt(-inputRef.current.value),
     });
+    toast.success("trasaction added", { autoClose: 1000 });
     inputRef.current.value = "";
   };
 
@@ -87,14 +75,6 @@ function App() {
     console.log(el);
   });
 
-  // pop up handler
-
-  const handlePopUp = () => {
-    setPopup({
-      show: false,
-      message: "",
-    });
-  };
   // income calc
   const totalIncome = transactions
     .filter((el) => {
@@ -117,7 +97,7 @@ function App() {
 
   return (
     <>
-      {popup.show && <PopUp message={popup.message} setPopup={handlePopUp} />}
+      <ToastContainer />
       <Card>
         <aside>
           <h3 className={classes.balance_label}>Balance</h3>

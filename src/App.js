@@ -36,6 +36,7 @@ function App() {
     return false;
   }
 
+  // check if the amount is negitive
   function isNegitiveAmount() {
     if (inputRef.current.value * 1 < 0) {
       toast.error("amount should be Positive", {
@@ -86,7 +87,6 @@ function App() {
     }
 
     if (inputRef.current.value === "") {
-      // alert("Please Enter a number");
       toast.error("Please Enter a number", {
         autoClose: 1500,
         hideProgressBar: true,

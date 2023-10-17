@@ -3,11 +3,12 @@
 // import SignupForm from './components/Signup';
 // import LoginForm from './components/LoginForm';
 
+import classes from "./App.module.css";
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import Card from "./components/UI/Card";
-import classes from "./App.module.css";
 import logo from "./logo192.png";
 
 import { useState, useRef, useReducer } from "react";
@@ -26,10 +27,16 @@ function App() {
   const incomeBtnHandler = (e) => {
     e.preventDefault();
     if (inputRef.current.value === "") {
-      toast.error("Please Enter a number", { autoClose: 1500 });
+      toast.error("Please Enter a number", {
+        autoClose: 1500,
+        hideProgressBar: true,
+      });
       return;
     }
-    toast.success("trasaction added", { autoClose: 1000 });
+    toast.success("trasaction added", {
+      autoClose: 1000,
+      hideProgressBar: true,
+    });
 
     updateTransactions({
       action: "income",
@@ -42,13 +49,16 @@ function App() {
     e.preventDefault();
 
     if (inputRef.current.value > balance) {
-      toast.error("Low Balence", { autoClose: 1500 });
+      toast.error("Low Balence", { autoClose: 1500, hideProgressBar: true });
       return;
     }
 
     if (inputRef.current.value === "") {
       // alert("Please Enter a number");
-      toast.error("Please Enter a number", { autoClose: 1500 });
+      toast.error("Please Enter a number", {
+        autoClose: 1500,
+        hideProgressBar: true,
+      });
       return;
     }
 
@@ -56,7 +66,10 @@ function App() {
       action: "expense",
       payload: parseInt(-inputRef.current.value),
     });
-    toast.success("trasaction added", { autoClose: 1000 });
+    toast.success("trasaction added", {
+      autoClose: 1000,
+      hideProgressBar: true,
+    });
     inputRef.current.value = "";
   };
 

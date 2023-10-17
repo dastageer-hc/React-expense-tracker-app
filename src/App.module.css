@@ -1,42 +1,40 @@
-.total-balance{
+.total-balance {
   /* background-color: red; */
   padding-bottom: 1rem;
   border-bottom: 2px solid rgb(230, 230, 230);
 }
-.transaction_label{
+.transaction_label {
   border-radius: 0.2rem;
-  padding-left:1rem ;
+  padding-left: 1rem;
 }
-.transaction_container{
+.transaction_container {
   border-bottom: 2px solid rgb(230, 230, 230);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.income{
-  padding-left:1rem ;
-  
+.income {
+  padding-left: 1rem;
+
   border-left: 5px solid rgb(85, 211, 85);
 }
-.expense{
-  padding-left:1rem ;
-  
+.expense {
+  padding-left: 1rem;
+
   border-left: 5px solid rgb(219, 42, 29);
 }
-.addTransaction-container  form{
-
+.addTransaction-container form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
 }
 
-.addTransaction-container{
+.addTransaction-container {
   margin-top: 2rem;
 }
 
-.input{
+.input {
   outline: none;
   border: none;
   height: 1.5rem;
@@ -45,13 +43,12 @@
   margin-bottom: 2rem;
   border-radius: 1rem;
   padding: 0.5rem;
-  
 }
-.addTransaction-container form  label{
+.addTransaction-container form label {
   font-size: 1.3rem;
   font-weight: bold;
 }
-.addTransaction-container form button{
+.addTransaction-container form button {
   height: 2rem;
   width: 5rem;
   background-color: white;
@@ -60,16 +57,16 @@
   margin-right: 50px;
   border-radius: 1rem;
 }
-.addTransaction-container form button:active{
+.addTransaction-container form button:active {
   background-color: rgb(20, 129, 129);
-  color: white
+  color: white;
 }
 
-.transaction_list ul{
+.transaction_list ul {
   display: flex;
   flex-direction: column-reverse;
 }
-.transaction_list ul li{
+.transaction_list ul li {
   list-style-type: none;
   background-color: white;
   padding: 0.6rem;
@@ -77,24 +74,22 @@
   margin-top: 1rem;
   font-size: 2rem;
   font-weight: bold;
-  
-  border-radius: 0.3rem ;
+
+  border-radius: 0.3rem;
 }
-li.expenseListItem{
+li.expenseListItem {
   border-left: 10px solid red;
 }
 
-li.incomeListItem{
+li.incomeListItem {
   border-left: 10px solid rgb(41, 255, 41);
-
 }
-@media (max-width: 760px){
-  body{
+@media (max-width: 760px) {
+  body {
     font-size: 1.5rem;
     margin-left: 1rem;
-    
   }
-  .addTransaction-container form button{
+  .addTransaction-container form button {
     width: 15rem;
     height: 3rem;
     margin-bottom: 1rem;
